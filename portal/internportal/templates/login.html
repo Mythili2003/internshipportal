@@ -1,0 +1,88 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'login.css' %}">
+
+<div class="login-container">
+    <!-- <h2>Apply For Internship</h2> -->
+    {% if show_popup %}
+    <div class="popup">
+     <b> <h3 style="text-align: center;color: red;">Application already exists for this email and job title combination.</h3></b>
+    </div>
+      {% endif %}
+
+    <form method="POST" action="{% url 'login' %}" enctype="multipart/form-data">
+
+        {% csrf_token %}
+       
+         
+           <div class="title">Registration</div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" id="firname" name="firname" value="{{ applys.firname }}"required placeholder="First Name">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" id="lasname" name="lasname" value="{{ applys.lasname }}"  required placeholder="Last Name"> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile</span>
+                        <input type="text" id="mobile" name="mobile" pattern="[0-9]{10}" value="{{ applys.mobile }}" required placeholder="Mobile number"> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" id="email" name="email" value="{{ applys.email }}"  required placeholder="Email">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">College Name</span>
+                        <input type="text" id="college" name="college" value="{{ applys.college }}" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Education</span>
+                        <input type="text" id="edu" name="edu" value="{{ applys.edu}}"required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Job Title</span>
+                        <input type="text" id="jobtitle" name="jobtitle" value="{{ applys.jobtitle }}" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Location</span>
+                        <input type="text" id="loc" name="loc" value="{{ applys.loc }}" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Any Proir experience?</span>
+                        <input type="text" id="exp" name="exp" value="{{ applys.exp }}" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Languages Known</span>
+                        <input type="text" id="lan" name="lan" value="{{ applys.lan }}" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Academic/Personal Projects</span>
+                        <textarea id="projects" name="projects" required>{{ applys.projects }}</textarea>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Trainings and Courses</span>
+                        <textarea id="train" name="train" required>{{ applys.train }}</textarea>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Skills</span>
+                        <textarea id="skills" name="skills" required>{{ applys.skills }}</textarea>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="details">Why we need to Hire you?</span>
+                        <textarea id="why_job" name="why_job" required>{{ applys.why_job }}</textarea>
+                    </div>
+                </div>
+                <div class="resume">
+                    <label for="resume">Resume:</label>
+                    <input type="file" id="resume" name="resume" required>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Apply">
+                </div>
+       
+      
+    </form>
+</div>

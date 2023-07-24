@@ -1,0 +1,221 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(238, 238, 238);
+    
+}
+header{
+    background-color: rgb(255, 255, 255);
+    height: 4em;
+    /* position: fixed;
+    top: 0;
+    left:0; */
+    border-bottom: solid #ececec;
+    box-shadow: #ececec;
+    width: 100%;
+}
+.logo{
+    min-height: fit-content;
+    max-height: 10vh;
+}
+
+
+
+
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0em;
+    
+    color: rgb(0, 0, 0);
+}
+@media(max-width:900px){
+    h1{
+        margin-top: 3vh;
+        font-size: 1em;
+    }
+}
+footer{
+    background-color: rgb(255, 255, 255);
+    height: 7em;
+    border-bottom: solid #ececec;
+    box-shadow: #ececec;
+    /* position: fixed;
+    bottom: 0;
+    left:0; */
+    width: 100%;
+    
+}
+:root {
+    --grid-width: clamp(35vw, 90vw, 100%);
+  }
+  .container {
+    margin: 0;
+    padding: 0px calc((100vw - var(--grid-width) * 3) / 6); /* Adjust the number '3' based on the number of items in a row */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr)); /* Updated grid-template-columns */
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: repeat(1, 95vw);
+      padding: 0; 
+    }
+    .card img{
+        min-height: 4vh;
+        min-width: 6vw;
+        padding: 0vh 1vw;
+    }
+    .card h2{
+     font-size: .7em;
+    }
+  }
+  
+ 
+.card{
+    background-color: #f7f9fa;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:center;
+    font-weight: bold;
+    margin: 1.5em;
+    border: solid  #dbdce0;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 0vh 0vw;
+    
+}
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 10px rgba(18, 6, 235, 0.3); 
+}
+.card h4{
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(249, 243, 243);
+    background-image:url("https://thumbs.gfycat.com/BravePointlessBoilweevil.webp") ;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height :100px;
+    width:100%;
+    padding:0.5rem 0;
+    opacity: 0.9;
+    text-align: center;
+    margin: 0px 0px;
+}
+
+@media(max-width:900px){
+    .card h4{
+        height:auto;
+        font-size: 2em;
+        align-items: center;
+    }
+    .card p{
+        color: rgb(0, 0, 0);
+        font-size: .9em;
+        line-height: .1em;
+    }
+}
+.card img{
+  
+    max-height: 6vh; 
+    max-width: 2vw;
+    padding: 0vh 1vw;
+    /* transition: transform 0.3s ease;
+    transform: scale(1); */
+}
+/* .card img:hover {
+    transform: scale(1.1); 
+} */
+
+.card p{
+    color: rgb(0, 0, 0);
+    font-size: .9em;
+    line-height: .2em;
+}
+
+.card .inner{
+    display: flex;
+    justify-content: space-around;
+}
+.card .divider{
+    width: .1vw;
+    height: 5vh;
+    background-color:#133ea3;
+}
+
+.card .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ .card a {
+    margin-top: 1.2em;
+    /* margin-bottom: 1.2em; */
+    padding: 1.2em;
+    background-color:#1417de;
+    color: rgb(255, 255, 255);
+    border: 2em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: .7em;
+}
+
+.card a:hover {
+    background-color: #4a70ed;
+}
+.card .c1 {
+    margin-top: 1.2em;
+    /* margin-bottom: 1.2em; */
+    padding: 1.2em;
+    background-color:white;
+    color: #2f3d9c;
+    border: solid  #ececec;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: .7em;
+}
+
+.card .c1:hover {
+    background-color: #eaeaea; 
+}
+
+@media(max-width:900px){
+    .card a{
+        padding: .8em;
+    }
+}
+
+
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    blue 0%,
+    #ffffff 50%,
+    blue 100%
+  
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #ffffff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

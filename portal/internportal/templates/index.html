@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Document</title>
+</head>
+<header>
+    <img class="logo" src="{% static 'lg.jpeg' %}" alt="">
+</header>
+<body>
+    <h1 ><b class="animate-charcter">Embark On An Exciting Journey with DataChip :</b> Discover In-Demand Career Paths & Thrilling Internship Opportunities!!</h1>
+    <div class="container">
+        {% for internship in internships %}
+        <div class="card">
+            <h4>{{ internship.name }}</h4><br>
+            <!-- <h2><img src="{% static 'suitcase (1).jpeg' %}" alt="">{{ internship.name }}</h2><br><br> -->
+            <div class="inner"><p>Vacancies: {{ internship.vacancies }}</p>
+                <div class="divider"></div>
+                <p>Type: {{ internship.internship_type }}</p></div>
+            <div class="btn">
+                <a class="card c1" href="{% url 'display_details' internship.id %}">View Details</a>
+                <a class="card" href="{% url 'login' %}">Apply Here</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</body>
+<footer></footer>
+</html>
