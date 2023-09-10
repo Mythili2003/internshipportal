@@ -1,26 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'success.css' %}">
 </head>
+
 <body>
     <div class="container">
-        
+
         <div class="info">
-            <img src="{% static 'verified.jpeg' %}" alt="Success GIF">
+            <img src="{% static 'media/verified.jpeg' %}" alt="Success GIF">
             <h1>Successfully Sent the Application!</h1>
             <p>
-                Thank you for submitting your application. We are delighted to inform you that we have received your application successfully. Our team will now carefully review your application and get back to you soon with further updates. <br><br>
-                If you have any questions or need any additional information, feel free to contact us at <a href="datachiptech@gmail.com"><strong>datachiptech@gmail.com</strong></a> or call us at <a href=""><strong>1234567890</strong></a>.
+                Thank you for submitting your application. We are delighted to inform you that we have received your
+                application successfully. Our team will now carefully review your application and get back to you soon
+                with further updates. <br><br>
+                If you have any questions or need any additional information, feel free to contact us at <a
+                    href="ndglobaltech@gmail.com"><strong>ndglobaltech@gmail.com</strong></a> or call us at <a
+                    href=""><strong>1234567890</strong></a>.
             </p>
             <br><br>
             <a class="btn" href="{% url 'index' %}">Go back & Explore more</a>
         </div>
     </div>
-    
+
 </body>
+
 </html>

@@ -1,111 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Intenship Details{% endblock %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'display.css' %}" />{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>
+    {{ internship.name }} Internship at<b class="animate-charcter">DataChip</b>
+  </h2>
+  <div class="card">
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Internship Details</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'display.css' %}" />
-  </head>
-
-  <header>
-    <img class="logo" src="{% static 'lg.jpg' %}" alt="" />
-  </header>
-
-  <body>
-    <div class="container">
-      <h2>
-        {{ internship.name }} Internship at<b class="animate-charcter">DataChip</b>
-      </h2>
-      <div class="card">
-
-        <div class="card1">
-          <div class="cardflex">
-            <p>
-                <img src="{% static 'hourglass.jpeg' %}" alt="" /><span class="label">Duration : </span>
-                <span class="de">{{ internship.duration }}</span>
-              </p>
-              <p>
-                <img src="{% static 'user.jpeg' %}" alt="" /><span class="label">Vacancies : </span>
-                  <span class="de"> {{ internship.vacancies }}</span>
-              </p>
-              <p>
-                <img src="{% static 'schedule.jpeg' %}" alt="" /><span class="label">Last Date to Apply :</span>
-                <span class="de">{{ internship.last_date_to_apply }}</span>
-              </p>
-          </div>
-          <div class="cardflex">
-            <p>
-                <img src="{% static 'map.jpeg' %}" alt="" /><span class="label">Type :</span>
-                <span class="de">{{ internship.internship_type }}</span>
-              </p>
-              <p>
-                <img src="{% static 'calendar.jpeg' %}" alt="" /><span class="label" >Start Date :</span>
-                <span class="de">{{ internship.start_date }}</span>
-              </p>
-              <!-- <a class="cardflex-a" href="{% url 'login' %}">Apply</a> -->
-          </div>
-        </div>
-
-
-
-
-
-
-        <hr color="blue" />
+    <div class="card1">
+      <div class="cardflex">
         <p>
-          <span class="label">Description :</span> <br /><span class="de">{{internship.description}}</span>
+          <img src="{% static 'media\hourglass.jpg' %}" alt="" /><span class="label">Duration : </span>
+          <span class="de">{{ internship.duration }}</span>
         </p>
         <p>
-          <span class="label">Requirements: </span> <br /><span class="de">
-            <ol>
-              {% for req in requirements %}
-               {% if req %}
-              <li class="de">{{ req }}</li>
-              {% endif %} 
-              {% endfor %}
-            </ol>
-          </span>
+          <img src="{% static 'media\user.jpeg' %}" alt="" /><span class="label">Vacancies : </span>
+          <span class="de"> {{ internship.vacancies }}</span>
         </p>
         <p>
-          <span class="label">Skills: </span> <br /><span class="de">
-            <ol>
-              {% for ski in skills %} 
-              {% if ski %}
-              <li class="de">{{ ski }}</li>
-              {% endif %} 
-              {% endfor %}
-            </ol>
-          </span>
+          <img src="{% static 'media\schedule.jpeg' %}" alt="" /><span class="label">Last Date to Apply :</span>
+          <span class="de">{{ internship.last_date_to_apply }}</span>
+        </p>
+      </div>
+      <div class="cardflex">
+        <p>
+          <img src="{% static 'media\map.jpeg' %}" alt="" /><span class="label">Type :</span>
+          <span class="de">{{ internship.internship_type }}</span>
         </p>
         <p>
-          <span class="label">Responsibilities: </span><br /><span class="de">
-            <ol>
-              {% for responsibility in responsibilities %} 
-              {% if responsibility %}
-              <li class="de">{{ responsibility }}</li>
-              {% endif %} 
-              {% endfor %}
-            </ol>
-          </span>
+          <img src="{% static 'media\calendar.jpeg' %}" alt="" /><span class="label">Start Date :</span>
+          <span class="de">{{ internship.start_date }}</span>
         </p>
-        <p>
-          <span class="label">Benefits and Perks: </span> <br /><span class="de">
-            <ol>
-              {% for bene in benefits %}
-               {% if bene %}
-              <li class="de">{{ bene }}</li>
-              {% endif %} 
-              {% endfor %}
-            </ol>
-          </span>
-        </p>
-        <br />
-
-        <a href="{% url 'login' %}">Apply</a>
+        
       </div>
     </div>
-  </body>
-  <footer></footer>
-</html>
+
+
+
+
+
+
+    <hr color="blue" />
+    <p>
+      <span class="label">Description :</span> <br /><span class="de">{{internship.description}}</span>
+    </p>
+    <p>
+      <span class="label">Requirements: </span> <br /><span class="de">
+        <ol>
+          {% for req in requirements %}
+          {% if req %}
+          <li class="de">{{ req }}</li>
+          {% endif %}
+          {% endfor %}
+        </ol>
+      </span>
+    </p>
+    <p>
+      <span class="label">Skills: </span> <br /><span class="de">
+        <ol>
+          {% for ski in skills %}
+          {% if ski %}
+          <li class="de">{{ ski }}</li>
+          {% endif %}
+          {% endfor %}
+        </ol>
+      </span>
+    </p>
+    <p>
+      <span class="label">Responsibilities: </span><br /><span class="de">
+        <ol>
+          {% for responsibility in responsibilities %}
+          {% if responsibility %}
+          <li class="de">{{ responsibility }}</li>
+          {% endif %}
+          {% endfor %}
+        </ol>
+      </span>
+    </p>
+    <p>
+      <span class="label">Benefits and Perks: </span> <br /><span class="de">
+        <ol>
+          {% for bene in benefits %}
+          {% if bene %}
+          <li class="de">{{ bene }}</li>
+          {% endif %}
+          {% endfor %}
+        </ol>
+      </span>
+    </p>
+    <br />
+
+    <a href="{% url 'login' %}">Apply</a>
+  </div>
+</div>
+{% endblock %}

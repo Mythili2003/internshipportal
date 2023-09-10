@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'contact.css' %}" />{% endblock %}
+{% block content %}
+<form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="contactform">
+        <div class="form-gif">
+            <img src="{% static 'media\contact.gif' %}" alt="GIF" width="100%">
+        </div>
+        <span class="contact">First Name</span>
+        <!-- contact.first_name is view a name -->
+
+        <input type="text" id="first" name="first" value="{{ contacts.first_name }}" required><br>
+        <span class="contact">Last Name</span>
+        <input type="text" id="last" name="last" value="{{ contacts.last_name }}" required><br>
+        <span class="contact">Mobile</span>
+        <input type="text" id="mobile" name="mobile" pattern="[0-9]{10}" value="{{contacts.mobile }}"><br>
+        <span class="contact">Email</span>
+        <input type="email" id="email" name="email" value=" {{ contacts.email }} " required><br>
+        <span class="contact">Course Interested:</span><br>
+        <input type="radio" id="ds" name="course" value="ds" {% if contacts.course == 'ds' %}checked{% endif %}>
+        <label for="ds">Data Science</label><br>
+        <input type="radio" id="es" name="course" value="es" {% if contacts.course == 'es' %}checked{% endif %}>
+        <label for="es">Embedded Systems</label><br><br>
+
+
+        <span class="contact">Any Queries?</span>
+        <textarea id="query" name="query" required> </textarea>
+        <br>
+        <br>
+
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+{% endblock %}

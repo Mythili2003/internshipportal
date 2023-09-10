@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Course Curriculum{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'dscur.css' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+ 
+ 
+   
+
+
+
+  <div id="nav-placeholder"></div>
+  <header>
+    <h1>Welcome to ND Global Tech solutions</h1>
+    <p>Discover Your Path to a Successful Career in Embedded System</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Course Curriculum</h2>
+      <div class="course-container">
+        <div class="course-card" style="background: linear-gradient(135deg, #fc8181 0%, #ffe5e5 100%);">
+          <h3>C Programming</h3>
+          <p>Learn the fundamental concepts of the C programming language and its applications in embedded systems
+            development.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #f7c797 0%, #fff3d9 100%);">
+          <h3>C Basics</h3>
+          <p>Build a strong foundation in C programming, covering topics such as variables, control statements, and
+            functions.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #c7e8a9 0%, #edf7dc 100%);">
+          <h3>Advanced C</h3>
+          <p>Dive deeper into C programming with advanced concepts like pointers, memory management, and data
+            structures.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #bad7f1 0%, #e3f0ff 100%);">
+          <h3>Embedded Systems</h3>
+          <p>Explore the world of embedded systems and learn to design and develop hardware-software integrated
+            solutions.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg,  #d6d6d6 0%, #f9f9f9 100%);">
+          <h3>Digital Electronics</h3>
+          <p>Understand the principles of digital electronics and how they are essential for embedded system design.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #ffc7c7 0%, #ffe5e5 100%);">
+          <h3>Micro Processor</h3>
+          <p>Study the architecture and working principles of microprocessors used in embedded systems applications.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #fdd0a2 0%, #fff8e6 100%);">
+          <h3>Microcontroller</h3>
+          <p>Learn about microcontrollers and their programming, critical for building embedded system projects.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #ff9f85 0%, #ffe5e5 100%);">
+          <h3>Linux and Kernel Programming</h3>
+          <p>Discover the Linux operating system and kernel programming for embedded devices and systems.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg,#c7e8a9 0%, #edf7dc 100%);">
+          <h3>Network Programming</h3>
+          <p>Explore network communication and protocols for interconnected embedded systems and IoT applications.</p>
+        </div>
+
+        <div class="course-card5" style="background: linear-gradient(135deg, #ffc7c7 0%, #ffe5e5 100%);">
+          <h3>Industrial Embedded Systems</h3>
+          <p>Focus on real-world applications of embedded systems in industries like automation and robotics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="card">
+      <h2>Additionally, we are providing</h2>
+      <div class="course-container">
+        <div class="course-card" style="background: linear-gradient(135deg, #f7c797 0%, #fff3d9 100%);">
+          <h3>RTOS (Real-Time Operating Systems)</h3>
+          <p>Learn about real-time operating systems used in embedded systems for time-critical applications.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #ff9f85 0%, #ffe5e5 100%);">
+          <h3>Overview of AUTOSAR</h3>
+          <p>Get an introduction to AUTOSAR, a standardized software architecture for automotive embedded systems.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #bad7f1 0%, #e3f0ff 100%);">
+          <h3>EV (Electric Vehicles) and Power Train</h3>
+          <p>Explore the technology behind electric vehicles and powertrain systems for sustainable mobility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}

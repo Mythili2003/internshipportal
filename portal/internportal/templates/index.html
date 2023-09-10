@@ -1,33 +1,158 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'index.css' %}">
-    <title>Document</title>
-</head>
-<header>
-    <img class="logo" src="{% static 'lg.jpeg' %}" alt="">
-</header>
-<body>
-    <h1 ><b class="animate-charcter">Embark On An Exciting Journey with DataChip :</b> Discover In-Demand Career Paths & Thrilling Internship Opportunities!!</h1>
-    <div class="container">
-        {% for internship in internships %}
-        <div class="card">
-            <h4>{{ internship.name }}</h4><br>
-            <!-- <h2><img src="{% static 'suitcase (1).jpeg' %}" alt="">{{ internship.name }}</h2><br><br> -->
-            <div class="inner"><p>Vacancies: {{ internship.vacancies }}</p>
-                <div class="divider"></div>
-                <p>Type: {{ internship.internship_type }}</p></div>
-            <div class="btn">
-                <a class="card c1" href="{% url 'display_details' internship.id %}">View Details</a>
-                <a class="card" href="{% url 'login' %}">Apply Here</a>
-            </div>
+{% extends "base.html" %} {% block title %}Index{% endblock %} {% load static %}
+{% block css %}<link
+  rel="stylesheet"
+  href="{% static 'style.css' %}"
+/>{%endblock %} {% block content %}
+<script>
+  // Optional: You can use JavaScript to trigger the animation again on refresh.
+  
+  window.onload = function () {
+    const container = document.querySelector(".sliding-text-container");
+    container.style.animation = "none";
+    container.offsetHeight; // Trigger a reflow, resetting the animation
+    container.style.animation = null;
+  };
+
+</script>
+
+<div id="page" class="site">
+  <div class="container">
+    <div class="body">
+      <div class="video-section">
+        <div class="video-container">
+          <video
+            src="{% static 'media\pexels-matilda-wormwood-4146195-3840x2160-50fps.mp4' %}"
+            loop
+            autoplay
+            muted
+          ></video>
+          <div class="video-overlay"></div>
         </div>
-        {% endfor %}
+        <div class="text-overlay sliding-text-container">
+          <h1 class="sliding-text">ND GLOBAL SOLUTIONS</h1>
+        </div>
+        <div class="text-overlay sliding-text-container1">
+          <h1 class="sliding-text">Learn & Evolve</h1>
+        </div>
+      </div>
     </div>
-    
-</body>
-<footer></footer>
-</html>
+  </div>
+</div>
+
+<br />
+<h1 class="mar h1" id="mars">
+  Get to Your Success in 3 Simple Steps<br /><span></span>
+</h1>
+<div class="step-container">
+  <div class="step">
+    <div class="step-number">1</div>
+    <h3>Check the Course</h3>
+    <p>
+      Browse through the list of courses available. Check the requirements for
+      each course, explore the syllabus, and review the outcomes of the course.
+    </p>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <h3> Start the Course </h3>
+    <p>
+      Start the course at your own pace. Each course has a collection of
+      technical modules supported by a good amount of exercises and projects.
+    </p>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <h3>Complete the Projects</h3>
+    <p>
+      Learning gets completed when you put in effort to complete the given
+      projects. Enjoy the work and become more comfortable with it.
+    </p>
+  </div>
+</div>
+
+<h1 class="mar h1" id="mars">OUR MISSION<br /><span></span></h1>
+<div id="gifContainer">
+  <div class="dynamicWord1">
+    "We are dedicated to delivering cutting-edge IT solutions that empower
+    businesses and individuals, while also fostering a commitment to providing
+    quality education that nurtures lifelong learning and personal growth."
+  </div>
+  <img id="gif" src="{% static 'media\rock2.gif' %}" />
+</div>
+<br />
+<br />
+
+<h1 class="mar h1" id="mars">OUR VISION<br /><span></span></h1>
+<div id="gifContainer">
+  <img id="gif2" src="{% static 'media\bulb2.gif' %}" width="200px" />
+  <div class="dynamicWord2">
+    "Leading the way in technology to create a globally connected world and
+    Illuminating minds for a brighter tomorrow."
+  </div>
+</div>
+<br />
+
+<h1 class="mar h1" id="mars">OUR COURSES<br /><span></span></h1>
+<div class="course-container">
+  <div class="course">
+    <img
+      src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      alt="Course Image"
+    />
+    <h2>Data Science</h2>
+    <br />
+    <p>
+      Master the art of data science through comprehensive coursework covering
+      statistical analysis, machine learning, and data visualization.
+    </p>
+    <br /><br />
+    <a href="{% url 'datascience' %}" id="button" class="btn">View Details</a>
+  </div>
+  <div class="course">
+    <img
+      src="https://t4.ftcdn.net/jpg/05/95/79/61/360_F_595796138_SyMpuQa0XfOUpJa3v5uhTwMvPrmN8W22.webp"
+      alt="Course Image"
+    />
+    <h2>Embedded Systems</h2>
+    <br />
+    <p>
+      Dive into the world of Embedded Systems with our comprehensive course,
+      covering hardware-software integration and real-world applications.
+    </p>
+    <br /><br />
+    <a href="{% url 'embedded' %}" id="button" class="btn">View Details</a>
+  </div>
+</div>
+<br />
+<br />
+
+<div class="why-container">
+  <div class="why-block">
+    <h1 class="mar h1" id="mars">WHY US<br /><span></span></h1>
+    <div class="dynamicWord">
+      <i>ND Global Tech Solutions: Empowering Individuals in the Data-Driven World.</i>
+      <br><br>
+      Welcome to ND Global Tech Solutions, a specialized institution with a
+      singular focus on empowering individuals within the dynamic realm of data
+      science and technology.
+    </div>
+  </div>
+  <div class="why-block">
+    <h1 class="mar h1" id="mars">ABOUT US<br /><span></span></h1>
+    <div class="dynamicWord">
+      <i>ND Global Tech Solutions: A distinguished educational institution, 
+      dedicated to empowering students and nurturing their potential.</i>
+      <br>
+      <br>We firmly believe that education serves as the gateway to boundless opportunities
+      and the cultivation of gender equality.
+    </div>
+  </div>
+</div>
+<div class="know-more">
+  <a href="{% url 'about' %}" id="button">Know more</a>
+</div>
+
+<br />
+<br />
+
+{% endblock %}

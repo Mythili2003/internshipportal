@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}Internship{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'projects.css' %}">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+{% endblock %}
+{% block content %}
+   
+    
+
+
+   <h1><b class="animate-charcter"> DISCOVER PROJECTS AT ND GLOBAL SOLUTIONS</b></h1>
+    <div class="container mt-5">
+        <!-- Card 1 -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <img src="https://cdn.dribbble.com/users/1233499/screenshots/3850691/web-development.gif" class="img-fluid rounded-start   rotate3d "
+                    id="card1-image" alt="Placeholder Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">WEB DEVELOPMENT</h5>
+                        <p class="card-text" style="font-size: 125%;">
+                            Our expertise in web development spans across a diverse range of sectors, including:
+                        <ul style="font-size: 125%;">
+                            <li>E-commerce Development: Crafting seamless and efficient online shopping experiences.
+                            </li>
+                            
+                        </ul>
+                        <div class="hidden-content" style="font-size: 125%;display: none;">
+                            <ul>
+                                <li>Educational Websites: Building platforms for effective learning and knowledge sharing.
+                                </li>
+                                <li>Portfolio Websites: Showcasing your unique skills and accomplishments in a visually
+                                    compelling manner.</li>
+                                <li>Corporate Websites: Establishing a strong online presence for businesses.</li>
+                                <li>Blog and Content Platforms: Creating engaging and content-rich websites.</li>
+                                <li>Social Networking Platforms: Building communities and fostering connections.</li>
+                                <li>Booking and Reservation Systems: Streamlining appointment and reservation processes.
+                                </li>
+                                <li>News and Media Websites: Delivering timely and informative content to audiences.
+                                </li>
+                                <li>Healthcare and Medical Websites: Enhancing healthcare services through digital
+                                    solutions.</li>
+                                <li>Real Estate Websites: Facilitating property buying, selling, and renting.</li>
+                                <li>Travel and Tourism Websites: Inspiring wanderlust and simplifying travel planning.
+                                </li>
+                                <li>Nonprofit and Charity Websites: Amplifying the impact of charitable organizations.
+                                </li>
+                            </ul>
+                        </div>
+                        </p>
+                        <button class="btn btn-primary" onclick="toggleContent(this)">Know More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <img src="https://miro.medium.com/v2/resize:fit:1024/1*nHfayfdmxAApbg84iMrJqQ.gif" class="img-fluid rounded-start" alt="Placeholder Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">WEB SCRAPING</h5>
+                        <p class="card-text" style="font-size: 125%;">
+                            At <span style="color: goldenrod;">ND GLOBAL TECHS SOLUTION</span>, we are currently deeply
+                            involved in a dynamic web scraping initiative. Our primary focus is on aggregating
+                            invaluable data from diverse online platforms.
+                        </p>
+                        <p class="hidden-content" style="font-size: 125%; display: none;">
+                            We employ cutting-edge methodologies and tools to skillfully extract pertinent data from
+                            targeted websites. Through this process, we unveil concealed insights that serve as the
+                            foundation for the development of purpose-driven applications. Throughout this endeavor, we
+                            prioritize meticulous attention to security considerations and ensure strict compliance with
+                            licensing protocols.
+                        </p>
+                        <button class="btn btn-primary" onclick="toggleContent(this)">Know More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <img src="https://miro.medium.com/v2/resize:fit:1358/1*bhFifratH9DjKqMBTeQG5A.gif" class="img-fluid rounded-start"
+                    alt="Placeholder Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">NEURAL NETWORK PROCESSING</h5>
+                        <p class="card-text" style="font-size: 125%;">
+                            Another vital aspect of our work at <span style="color: goldenrod;">ND GLOBAL TECHS
+                                SOLUTION</span> involves neural network processing projects. Our core objective is to
+                            ensure timely delivery of solutions for our clients.
+                        </p>
+                        <p class="hidden-content" style="font-size: 125%; display: none;">
+                            We harness the power of neural networks for various tasks, with a particular emphasis on
+                            text summarization. By leveraging these technologies, we provide our clients with
+                            state-of-the-art solutions that streamline information and enhance decision-making.
+                        </p>
+                        <button class="btn btn-primary" onclick="toggleContent(this)">Know More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script>
+                
+
+        function toggleContent(button) {
+            const card = button.parentElement.parentElement;
+            const hiddenContent = card.querySelector('.hidden-content'); // Select the hidden-content element
+
+            if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
+                hiddenContent.style.display = 'block';
+                button.textContent = 'Show Less';
+            } else {
+                hiddenContent.style.display = 'none';
+                button.textContent = 'Know More';
+            }
+        }
+    </script>
+{% endblock %}

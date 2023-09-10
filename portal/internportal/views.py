@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Internship_details
 from .models import Applicant
-from django.shortcuts import render
+from .models import contactform
+
 
 def display_details(request, internship_id):
     internship = Internship_details.objects.get(id=internship_id)
@@ -53,6 +53,49 @@ def login(request):
     return render(request, 'login.html', {'applys': applys})
     
 
-def index(request):
+def internship(request):
     internships = Internship_details.objects.all()
-    return render(request, 'index.html', {'internships': internships})
+    return render(request, 'internship.html', {'internships': internships})
+
+def faqs(request):
+    return render(request,'faq.html')
+
+def index(request):
+    return render(request,'index.html')
+
+def abouts(request):
+    return render(request,'about.html')
+
+def contact(request):
+    contacts=contactform.objects.all()
+    if request.method == 'POST':
+       first_name = request.POST.get('first')
+       last_name = request.POST.get('last')
+       mobile = request.POST.get('mobile')
+       email = request.POST.get('email')
+       course = request.POST.get('course')
+       query = request.POST.get('query')
+       contact = contactform(
+            first_name=first_name,
+            last_name=last_name,
+            mobile=mobile,
+            email=email,
+            course=course,
+            query=query
+        )
+       contact.save()
+       return render(request, 'success.html')
+
+    return render(request, 'contact.html',{'contacts':contacts})
+
+def success(request):
+    return render(request,'sucess.html')
+
+def datascience(request):
+    return render(request,'dscur.html')
+
+def embedded(request):
+    return render(request,'escur.html')
+
+def projects(request):
+    return render(request,'projects.html')

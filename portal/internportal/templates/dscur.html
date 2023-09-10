@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Course Curriculum{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'dscur.css' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+
+  
+ 
+
+  
+  <div id="nav-placeholder"></div>
+  <header>
+    <h1>Welcome to ND Global Tech solutions</h1>
+    <p>Discover Your Path to a Successful Career in Data Science</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Course Curriculum</h2>
+      <div class="course-container">
+        <div class="course-card" style="background: linear-gradient(135deg, #fc8181 0%, #ffe5e5 100%);">
+          <h3>Data Science</h3>
+          <p>Learn the foundations of Data Science, including data analysis, cleaning, and visualization techniques.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #f7c797 0%, #fff3d9 100%);">
+          <h3>Python</h3>
+          <p>Master the powerful Python programming language for data manipulation and analysis.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #c7e8a9 0%, #edf7dc 100%);">
+          <h3>Statistics</h3>
+          <p>Understand statistical concepts and methods crucial for drawing meaningful insights from data.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #bad7f1 0%, #e3f0ff 100%);">
+          <h3>Machine Learning</h3>
+          <p>Explore various ML algorithms and techniques to build predictive models from data.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #fdd0a2 0%, #fff8e6 100%);">
+          <h3>Deep Learning</h3>
+          <p>Dive into the world of neural networks and artificial intelligence for advanced data analysis.</p>
+        </div>
+        <div class="course-card" style="background: linear-gradient(135deg, #ffc7c7 0%, #ffe5e5 100%);">
+          <h3>Natural Language Processing</h3>
+          <p>Learn how to process and analyze natural language data using ML and AI techniques.</p>
+        </div>
+        <div class="course-card5" style="background: linear-gradient(135deg, #d6d6d6 0%, #f9f9f9 100%);">
+          <h3>MLOPs</h3>
+          <p>Discover the best practices for deploying and managing ML models in production environments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h2>Deployment Tools</h2>
+      <div class="course-container">
+        <div class="course-card1" style="background: linear-gradient(135deg, #ff9f85 0%, #ffe5e5 100%);">
+          <h3>AWS - Sage Maker</h3>
+          <p>Utilize AWS Sage Maker to deploy and manage scalable ML, DL, NLP models on the cloud.</p>
+        </div>
+        <div class="course-card1" style="background: linear-gradient(135deg, #ffc7c7 0%, #ffe5e5 100%);">
+          <h3>Flask</h3>
+          <p>Learn Flask, a popular web framework, to build and deploy interactive ML applications.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Visualization Tools</h2>
+      <div class="course-container">
+        <div class="course-card1" style="background: linear-gradient(135deg, #c7e8a9 0%, #edf7dc 100%);">
+          <h3>Power BI</h3>
+          <p>Create compelling visualizations and interactive reports with Power BI for data-driven insights.</p>
+        </div>
+        <div class="course-card1" style="background: linear-gradient(135deg, #bad7f1 0%, #e3f0ff 100%);">
+          <h3>Tableau</h3>
+          <p>Master Tableau to design interactive dashboards and visualizations for effective data communication.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Additionally, we are providing</h2>
+      <div class="course-container">
+        <div class="course-card1" style="background: linear-gradient(135deg, #f7c797 0%, #fff3d9 100%);">
+          <h3>Introduction to Generative AI</h3>
+          <p>Explore the fascinating world of Generative AI and its applications in various domains.</p>
+        </div>
+        <div class="course-card1" style="background: linear-gradient(135deg, #ff9f85 0%, #ffe5e5 100%);">
+          <h3>Chatbots</h3>
+          <p>Learn to build intelligent chatbots and conversational interfaces using modern NLP techniques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

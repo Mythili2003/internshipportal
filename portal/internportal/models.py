@@ -38,6 +38,21 @@ class Applicant(models.Model):
 
     def __str__(self):
         return self.firname + ' ' + self.lasname
+    
+class contactform(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    mobile = models.CharField(max_length=10, validators=[RegexValidator(r'^\d{10}$')])  
+    email = models.EmailField()
+    COURSE_CHOICES = [
+        ('ds', 'Data Science'),
+        ('es', 'Embedded Systems'),
+    ]
+    course = models.CharField(max_length=2, choices=COURSE_CHOICES)
+    query = models.TextField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
    
 
     
